@@ -3,12 +3,15 @@ function cargarContenidoRegistro() {
     window.location.replace('index.html');
 }
 
+function cargarContenidoLogin() { 
+    window.location.replace('login.html');
+}
+
 function cargarContenidoUsuarios() { 
     cargarContenido('usuarios.html');
 }
 
-function cargarContenidoPrivacidad() { 
-    //cargarContenido('privacidad.html');
+function cargarContenidoPrivacidad() {
     window.location.replace('privacidad.html');
 }
 
@@ -27,7 +30,8 @@ function asignarLigasMenu () {
     let iframeDocument = idFrameMenu.contentWindow.document;
     if (iframeDocument == undefined) { return; }
     
-    iframeDocument.getElementById('idMenuUsuarios').addEventListener("click", cargarContenidoUsuarios);
     iframeDocument.getElementById('idMenuPrivacidad').addEventListener("click", cargarContenidoPrivacidad);
     iframeDocument.getElementById('idMenuRegistro').addEventListener("click", cargarContenidoRegistro);
+    iframeDocument.getElementById('idMenuAcceso').addEventListener("click", cargarContenidoLogin);
+    
 }
